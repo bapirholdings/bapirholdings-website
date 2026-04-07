@@ -346,8 +346,19 @@
         /* [COLOR FIX]: Override default inheritance for footer text on overlay pages */
         .cigars-page .footer-left p, 
         .about-page .footer-left p,
-        .contact-page .footer-left p,
         .cart-page .footer-left p {
+            color: #00ff88;
+        }
+        
+        .cigars-page .footer-right p,
+        .about-page .footer-right p,
+        .cart-page .footer-right p {
+            color: #00ff88;
+        }
+        
+        .cigars-page .footer-right p strong,
+        .about-page .footer-right p strong,
+        .cart-page .footer-right p strong {
             color: #00ff88;
         }
 
@@ -577,40 +588,10 @@
             border-top: 2px solid #00ff88;
         }
         
-        .contact-page {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: #0a0a0a;
-        }
         
         /* [HEIGHT/DIMENSION FIX] Reduced bottom padding from 4rem to 2rem */
-        .contact-page-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 6rem 2rem 2rem 2rem;
-        }
         
-        .contact-page h1 {
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0,255,255,0.6);
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
         
-        .contact-page p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #e0e0e0;
-            text-align: center;
-        }
         
         .cigars-page {
             display: none;
@@ -827,160 +808,6 @@
             margin-top: 3rem;
         }
 
-        /* --- NEW ADMIN PAGE STYLES --- */
-        .admin-page {
-            display: none;
-            position: fixed;
-            z-index: 2000; /* Higher than cart */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.95);
-            color: #e0e0e0;
-        }
-
-        .admin-content {
-            max-width: 900px;
-            margin: 100px auto 50px auto;
-            padding: 3rem;
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            border: 2px solid #ff00ff;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(255,0,255,0.5);
-        }
-
-        .admin-content h1 {
-            color: #ff00ff;
-            text-shadow: 0 0 15px rgba(255,0,255,0.7);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .login-form, .admin-dashboard {
-            padding: 1.5rem;
-            border: 1px solid #333;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-        
-        .login-form p {
-            text-align: center;
-            color: #e0e0e0;
-            margin-bottom: 1.5rem;
-        }
-
-        .admin-dashboard h2 {
-            color: #00ffff;
-            margin-bottom: 1rem;
-        }
-
-        /* Styles for login inputs */
-        .login-form input[type="text"], 
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1.5rem; 
-            background-color: #0a0a0a;
-            border: 2px solid #00ff88;
-            border-radius: 5px;
-            color: #e0e0e0;
-            font-family: 'Myriad Pro', 'Myriad', 'Arial', sans-serif;
-        }
-
-        /* Ensure standard form-group label visibility is maintained in admin form */
-        .admin-list-item {
-            background-color: #0a0a0a;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 5px solid #ff00ff;
-        }
-        
-        .admin-item-info {
-            flex-basis: 40%;
-            margin-bottom: 10px;
-        }
-        
-        .admin-item-fields {
-            flex-basis: 30%;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .admin-item-actions {
-            flex-basis: 20%;
-            text-align: right;
-        }
-
-        .admin-list-item strong {
-            color: #00ffff;
-            display: block;
-            font-size: 1.1rem;
-        }
-        
-        .admin-list-item span {
-            color: #00ff88;
-            font-size: 0.9rem;
-        }
-
-        .edit-btn, .save-btn, .cancel-btn, .logout-btn, .login-btn {
-            padding: 0.7rem 1.2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .edit-btn { background-color: #ffff00; color: #0a0a0a; }
-        .save-btn { background-color: #00ff88; color: #0a0a0a; }
-        .cancel-btn { background-color: #ff4444; color: #fff; }
-        .login-btn { 
-            background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
-            color: #0a0a0a; 
-            width: 100%;
-            padding: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .login-btn:hover {
-            box-shadow: 0 0 15px rgba(255,0,255,0.7);
-        }
-
-        .logout-btn { 
-            background-color: #ff00ff; 
-            color: #0a0a0a; 
-            margin-top: 1rem; 
-            width: 100%;
-            padding: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .admin-input {
-            background-color: #1a1a2e;
-            color: #e0e0e0;
-            border: 1px solid #ff00ff;
-            padding: 5px;
-            margin-right: 10px;
-            width: 80px;
-            text-align: center;
-        }
-        
-        .admin-input[type="number"] {
-            -moz-appearance: textfield; /* Firefox */
-        }
-        .admin-input::-webkit-outer-spin-button,
-        .admin-input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
     </style>
 </head>
 <body>
@@ -995,7 +822,6 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#" onclick="openCigarsPage(); return false;">Cigars</a></li>
                     <li><a href="#" onclick="openAboutPage(); return false;">About</a></li>
-                    <li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
                 </ul>
                 <div class="cart-icon" onclick="openCart()">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1024,13 +850,12 @@
                 <p>Premium Cigars | Exceptional Quality</p>
             </div>
             <div class="footer-right">
-                <p><strong>Email:</strong> <a href="mailto:bapirholdings@icloud.com">bapirholdings@icloud.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:6178638077">(617) 863-8077</a></p>
+                <p><strong>Email:</strong> bapirholdings@icloud.com</p>
+                <p><strong>Phone:</strong> (617) 863-8077</p>
             </div>
         </div>
         <div class="footer-center">
             <a href="#" class="privacy-link" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
-            <a href="#" class="privacy-link" style="margin-left: 20px; color: #ff00ff;" onclick="openAdminLogin(); return false;">Admin Login</a>
         </div>
     </footer>
 
@@ -1046,7 +871,6 @@
                         <li><a href="#home" onclick="closeCigarsPage(); return false;">Home</a></li>
                         <li><a href="#" onclick="return false;">Cigars</a></li>
                         <li><a href="#" onclick="closeCigarsPage(); openAboutPage(); return false;">About</a></li>
-                        <li><a href="#" onclick="closeCigarsPage(); openContactPage(); return false;">Contact</a></li>
                     </ul>
                     <div class="cart-icon" onclick="openCart()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1118,8 +942,8 @@
                     <p>Premium Cigars | Exceptional Quality</p>
                 </div>
                 <div class="footer-right">
-                    <p><strong>Email:</strong> <a href="mailto:bapirholdings@icloud.com">bapirholdings@icloud.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:6178638077">(617) 863-8077</a></p>
+                    <p><strong>Email:</strong> bapirholdings@icloud.com</p>
+                    <p><strong>Phone:</strong> (617) 863-8077</p>
                 </div>
             </div>
             <div class="footer-center">
@@ -1140,7 +964,6 @@
                         <li><a href="#home" onclick="closeAboutPage(); return false;">Home</a></li>
                         <li><a href="#" onclick="closeAboutPage(); openCigarsPage(); return false;">Cigars</a></li>
                         <li><a href="#" onclick="return false;">About</a></li>
-                        <li><a href="#" onclick="closeAboutPage(); openContactPage(); return false;">Contact</a></li>
                     </ul>
                     <div class="cart-icon" onclick="openCart()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1168,8 +991,8 @@
                     <p>Premium Cigars | Exceptional Quality</p>
                 </div>
                 <div class="footer-right">
-                    <p><strong>Email:</strong> <a href="mailto:bapirholdings@icloud.com">bapirholdings@icloud.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:6178638077">(617) 863-8077</a></p>
+                    <p><strong>Email:</strong> bapirholdings@icloud.com</p>
+                    <p><strong>Phone:</strong> (617) 863-8077</p>
                 </div>
             </div>
             <div class="footer-center">
@@ -1178,74 +1001,6 @@
         </footer>
     </div>
 
-    <div id="contactPage" class="contact-page">
-        <header>
-            <nav>
-                <a href="#home" onclick="closeContactPage(); return false;" class="logo-container">
-                    <img src="https://i.imgur.com/tlUO2B0.jpg" alt="Bapir Holdings Logo" class="logo">
-                    <div class="logo-text">BAPIR HOLDINGS</div>
-                </a>
-                <div class="nav-center">
-                    <ul class="nav-links">
-                        <li><a href="#home" onclick="closeContactPage(); return false;">Home</a></li>
-                        <li><a href="#" onclick="closeContactPage(); openCigarsPage(); return false;">Cigars</a></li>
-                        <li><a href="#" onclick="closeContactPage(); openAboutPage(); return false;">About</a></li>
-                        <li><a href="#" onclick="return false;">Contact</a></li>
-                    </ul>
-                    <div class="cart-icon" onclick="openCart()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span class="cart-count" id="cartCountContact">0</span>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div class="contact-page-content">
-            <h1>Get in Touch</h1>
-            <p>We're here to help! Complete the form below with any questions or concerns. Let us know how we can assist you, and we'll get right back to you!</p>
-            
-            <form class="contact-form" action="https://formspree.io/f/xanppkla" method="POST">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
-                </div>
-                
-                <input type="hidden" name="_subject" value="New Contact Form Submission - Bapir Holdings LLC">
-                <input type="hidden" name="_next" value="about:blank">
-                
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-        
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; 2025 Bapir Holdings LLC. All rights reserved.</p>
-                    <p>Premium Cigars | Exceptional Quality</p>
-                </div>
-                <div class="footer-right">
-                    <p><strong>Email:</strong> <a href="mailto:bapirholdings@icloud.com">bapirholdings@icloud.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:6178638077">(617) 863-8077</a></p>
-                </div>
-            </div>
-            <div class="footer-center">
-                <a href="#" class="privacy-link" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
-            </div>
-        </footer>
-    </div>
 
     <div id="cartPage" class="cart-page">
         <div class="cart-page-header">
@@ -1276,8 +1031,8 @@
                     <p>Premium Cigars | Exceptional Quality</p>
                 </div>
                 <div class="footer-right">
-                    <p><strong>Email:</strong> <a href="mailto:bapirholdings@icloud.com">bapirholdings@icloud.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:6178638077">(617) 863-8077</a></p>
+                    <p><strong>Email:</strong> bapirholdings@icloud.com</p>
+                    <p><strong>Phone:</strong> (617) 863-8077</p>
                 </div>
             </div>
             <div class="footer-center">
@@ -1329,29 +1084,6 @@
         </div>
     </div>
     
-    <div id="adminPage" class="admin-page">
-        <div class="admin-content">
-            <h1>Admin Panel</h1>
-            <div id="adminLoginForm" class="login-form">
-                <div class="form-group">
-                    <label for="adminUsername">Username</label>
-                    <input type="text" id="adminUsername" name="adminUsername">
-                </div>
-                <div class="form-group">
-                    <label for="adminPassword">Password</label>
-                    <input type="password" id="adminPassword" name="adminPassword">
-                </div>
-                <button class="login-btn" onclick="loginAdmin()">Login</button>
-            </div>
-
-            <div id="adminDashboard" class="admin-dashboard" style="display: none;">
-                <h2>Product Inventory Management</h2>
-                <div id="adminProductList">
-                    </div>
-                <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
-            </div>
-        </div>
-    </div>
 
 
     <script>
@@ -1359,7 +1091,7 @@
         // Cart items now store the total quantity for a given product ID
         let cartItems = [];
         
-        // Initial product data (for Admin Dashboard and store front)
+        // Initial product data
         // DELISTED OLIVA AND PADRON (IDs 4 & 5)
         let productsData = [
             { id: 1, brand: 'EP Carrillo', name: 'EP Carrillo Pledge Sojourn', size: '6.00x52', price: 13.25, stock: 19 },
@@ -1431,7 +1163,7 @@
                         qtyInput.disabled = true;
                         qtyInput.style.color = '#ff4444';
                     } else if (stockIndicator.querySelector('span[style*="ff4444"]')) {
-                        // If it was OOS but now has stock (e.g., after an admin change)
+                        // If it was OOS but now has stock
                         stockIndicator.innerHTML = 'In Stock';
                         stockIndicator.style.color = '#00ff88';
                         button.disabled = false;
@@ -1502,7 +1234,7 @@
             const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
             document.getElementById('cartCount').textContent = totalCount;
             // Update cart counts on all pages
-            const cartCountIds = ['cartCountCigars', 'cartCountAbout', 'cartCountContact'];
+            const cartCountIds = ['cartCountCigars', 'cartCountAbout'];
             cartCountIds.forEach(id => {
                 const element = document.getElementById(id);
                 if (element) {
@@ -1647,16 +1379,6 @@
             document.body.style.overflow = 'auto';
         }
         
-        function openContactPage() {
-            document.getElementById('contactPage').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            window.scrollTo(0, 0);
-        }
-        
-        function closeContactPage() {
-            document.getElementById('contactPage').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
         
         function openPrivacyModal() {
             document.getElementById('privacyModal').style.display = 'block';
@@ -1676,121 +1398,9 @@
             }
         }
         
-        /* --- ADMIN FUNCTIONS --- */
-        const ADMIN_USERNAME = 'admin';
-        const ADMIN_PASSWORD = 'tL2#g8O=2uq5';
-
-        function openAdminLogin() {
-            document.getElementById('adminPage').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            // Ensure login form is visible and dashboard is hidden on open
-            document.getElementById('adminLoginForm').style.display = 'block';
-            document.getElementById('adminDashboard').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        function loginAdmin() {
-            const usernameInput = document.getElementById('adminUsername').value;
-            const passwordInput = document.getElementById('adminPassword').value;
-
-            if (usernameInput === ADMIN_USERNAME && passwordInput === ADMIN_PASSWORD) {
-                document.getElementById('adminLoginForm').style.display = 'none';
-                document.getElementById('adminDashboard').style.display = 'block';
-                renderAdminDashboard();
-            } else {
-                alert('Invalid Credentials. Please try again.');
-            }
-        }
-
-        function logoutAdmin() {
-            document.getElementById('adminPage').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            document.getElementById('adminUsername').value = '';
-            document.getElementById('adminPassword').value = '';
-        }
-
-        function renderAdminDashboard() {
-            const listContainer = document.getElementById('adminProductList');
-            listContainer.innerHTML = '';
-            
-            productsData.forEach(product => {
-                const isEditing = product.isEditing;
-                const listItem = document.createElement('div');
-                listItem.className = 'admin-list-item';
-                listItem.setAttribute('data-id', product.id);
-
-                if (isEditing) {
-                    listItem.innerHTML = `
-                        <div class="admin-item-info">
-                            <input type="text" class="admin-input" id="edit-brand-${product.id}" value="${product.brand}" style="width: 150px; margin-bottom: 5px;">
-                            <input type="text" class="admin-input" id="edit-name-${product.id}" value="${product.name}" style="width: 100%;">
-                            <span>Size: ${product.size}</span>
-                        </div>
-                        <div class="admin-item-fields">
-                            <label for="edit-price-${product.id}" style="color: #00ffff; display: inline;">Price:</label>
-                            <input type="number" class="admin-input" id="edit-price-${product.id}" value="${product.price.toFixed(2)}" step="0.01">
-                            <label for="edit-stock-${product.id}" style="color: #00ffff; display: inline;">Stock:</label>
-                            <input type="number" class="admin-input" id="edit-stock-${product.id}" value="${product.stock}" step="1">
-                        </div>
-                        <div class="admin-item-actions">
-                            <button class="save-btn" onclick="saveProduct(${product.id})">Save</button>
-                            <button class="cancel-btn" onclick="cancelEdit(${product.id})">Cancel</button>
-                        </div>
-                    `;
-                } else {
-                    listItem.innerHTML = `
-                        <div class="admin-item-info">
-                            <strong>${product.name}</strong>
-                            <span>Brand: ${product.brand} | Size: ${product.size}</span>
-                        </div>
-                        <div class="admin-item-fields">
-                            <span>Price: $${product.price.toFixed(2)}</span>
-                            <span>Stock: ${product.stock}</span>
-                        </div>
-                        <div class="admin-item-actions">
-                            <button class="edit-btn" onclick="editProduct(${product.id})">Edit</button>
-                        </div>
-                    `;
-                }
-
-                listContainer.appendChild(listItem);
-            });
-        }
-
-        function editProduct(id) {
-            const product = productsData.find(p => p.id === id);
-            if (product) {
-                product.isEditing = true;
-                renderAdminDashboard();
-            }
-        }
-        
-        function cancelEdit(id) {
-            const product = productsData.find(p => p.id === id);
-            if (product) {
-                product.isEditing = false;
-                renderAdminDashboard();
-            }
-        }
-
-        function saveProduct(id) {
-            const product = productsData.find(p => p.id === id);
-            if (product) {
-                product.brand = document.getElementById(`edit-brand-${id}`).value;
-                product.name = document.getElementById(`edit-name-${id}`).value;
-                product.price = parseFloat(document.getElementById(`edit-price-${id}`).value);
-                product.stock = parseInt(document.getElementById(`edit-stock-${id}`).value);
-                product.isEditing = false;
-                renderAdminDashboard();
-                renderCigarsProductList(); // Update the main display
-                alert(`Product ID ${id} saved successfully!`);
-            }
-        }
-
         // Initialize cart count and dynamic products on load
         window.onload = () => {
              updateCartCount();
-             // The hardcoded products are already in the HTML. Call this to add the dynamic ones.
              renderCigarsProductList(); 
         };
     </script>
