@@ -236,6 +236,21 @@
             display: block;
         }
 
+        /* Ensure any img inside .product-image fills the area and crops nicely */
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* crop to fill the box */
+            display: block;
+        }
+
+        /* Smaller image height on narrow screens */
+        @media (max-width: 480px) {
+            .product-image {
+                height: 180px;
+            }
+        }
+
         .product-info {
             padding: 1.5rem;
         }
@@ -814,7 +829,7 @@
     <header>
         <nav>
             <a href="#home" class="logo-container">
-                <img src="https://i.imgur.com/tlUO2B0.jpg" alt="Bapir Holdings Logo" class="logo">
+                    <img src="images/logo3.jpeg" alt="Bapir Holdings Logo" class="logo">
                 <span class="logo-text">BAPIR HOLDINGS</span>
             </a>
             <div class="nav-center">
@@ -840,7 +855,7 @@
     </section>
 
     <section id="products" class="home-logo-section">
-        <img src="https://i.imgur.com/tlUO2B0.jpg" alt="Bapir Holdings Neon Logo">
+        <img src="images/logo3.jpeg" alt="Bapir Holdings Neon Logo">
     </section>
 
     <footer>
@@ -863,7 +878,7 @@
         <header>
             <nav>
                 <a href="#home" onclick="closeCigarsPage(); return false;" class="logo-container">
-                    <img src="https://i.imgur.com/tlUO2B0.jpg" alt="Bapir Holdings Logo" class="logo">
+                    <img src="images/logo3.jpeg" alt="Bapir Holdings Logo" class="logo">
                     <span class="logo-text">BAPIR HOLDINGS</span>
                 </a>
                 <div class="nav-center">
@@ -889,7 +904,7 @@
             
             <div class="products" id="cigarsProductList">
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image"><img class="cigar-img" loading="lazy" src="images/EP_Carrillo_Pledge.png" alt="EP Carrillo Pledge Sojourn"></div>
                     <div class="product-info">
                         <div class="product-brand">EP Carrillo</div>
                         <h3>EP Carrillo Pledge Sojourn</h3>
@@ -904,7 +919,7 @@
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image"><img class="cigar-img" loading="lazy" src="images/AJ_Fernandez_Decenio.png" alt="AJ Fernandez Decenio 10th Anniversary Toro"></div>
                     <div class="product-info">
                         <div class="product-brand">A.J. Fernandez</div>
                         <h3>AJ Fernandez Decenio 10th Anniversary Toro</h3>
@@ -919,7 +934,7 @@
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image"><img class="cigar-img" loading="lazy" src="images/Arturo_Fuente_Conquistadores.png" alt="Arturo Fuente Conquistadores Natural"></div>
                     <div class="product-info">
                         <div class="product-brand">Arturo Fuente</div>
                         <h3>Arturo Fuente Conquistadores Natural</h3>
@@ -956,7 +971,7 @@
         <header>
             <nav>
                 <a href="#home" onclick="closeAboutPage(); return false;" class="logo-container">
-                    <img src="https://i.imgur.com/tlUO2B0.jpg" alt="Bapir Holdings Logo" class="logo">
+                    <img src="images/logo3.jpeg" alt="Bapir Holdings Logo" class="logo">
                     <div class="logo-text">BAPIR HOLDINGS</div>
                 </a>
                 <div class="nav-center">
@@ -1020,6 +1035,65 @@
             <div id="cartSummary" class="cart-summary" style="display: none;">
                 <h2>Cart Summary</h2>
                 <p style="color: #e0e0e0; font-size: 1.2rem; margin: 1rem 0;">Total Items: <span id="totalItems" style="color: #00ff88; font-weight: bold;">0</span></p>
+                <p style="color: #e0e0e0; font-size: 1.1rem; margin: 0.25rem 0;">Subtotal: <span id="subtotalPrice" style="color: #00ff88; font-weight: bold;">$0.00</span></p>
+                <div style="display:flex; gap:8px; align-items:center; margin:0.25rem 0;">
+                    <label for="taxStateSelect" style="color:#e0e0e0;">State:</label>
+                    <select id="taxStateSelect" onchange="renderCart()" style="background:#0a0a0a; color:#e0e0e0; border:1px solid #00ff88; padding:4px 6px;">
+                        <option value="">-- Select state --</option>
+                        <option value="MA" selected>MA</option>
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AZ">AZ</option>
+                        <option value="AR">AR</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="IA">IA</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="ME">ME</option>
+                        <option value="MD">MD</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MS">MS</option>
+                        <option value="MO">MO</option>
+                        <option value="MT">MT</option>
+                        <option value="NE">NE</option>
+                        <option value="NV">NV</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NY">NY</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WV">WV</option>
+                        <option value="WI">WI</option>
+                        <option value="WY">WY</option>
+                    </select>
+                </div>
+                <p style="color: #e0e0e0; font-size: 1.1rem; margin: 0.25rem 0;">Tax: <span id="taxAmount" style="color: #00ff88; font-weight: bold;">$0.00</span></p>
+                <p style="color: #e0e0e0; font-size: 1.2rem; margin: 0.25rem 0;">Grand Total: <span id="totalPrice" style="color: #00ff88; font-weight: bold;">$0.00</span></p>
                 <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
             </div>
         </div>
@@ -1094,10 +1168,19 @@
         // Initial product data
         // DELISTED OLIVA AND PADRON (IDs 4 & 5)
         let productsData = [
-            { id: 1, brand: 'EP Carrillo', name: 'EP Carrillo Pledge Sojourn', size: '6.00x52', price: 13.25, stock: 19 },
+            { id: 1, brand: 'EP Carrillo', name: 'EP Carrillo Pledge Sojourn', size: '6.00x52', price: 14.00, stock: 19 },
             { id: 2, brand: 'A.J. Fernandez', name: 'AJ Fernandez Decenio 10th Anniversary Toro', size: '6.50x54', price: 14.00, stock: 19 },
-            { id: 3, brand: 'Arturo Fuente', name: 'Arturo Fuente Conquistadores Natural', size: '5.50x56', price: 19.00, stock: 28 }
+            { id: 3, brand: 'Arturo Fuente', name: 'Arturo Fuente Conquistadores Natural', size: '5.50x56', price: 8.00, stock: 28 }
         ];
+
+        // Simple sales tax rates (state-level base rates, percentage). These are approximate base rates.
+        const taxRates = {
+            AL:4, AK:0, AZ:5.6, AR:6.5, CA:7.25, CO:2.9, CT:6.35, DE:0, FL:6, GA:4,
+            HI:4, ID:6, IL:6.25, IN:7, IA:6, KS:6.5, KY:6, LA:4.45, ME:5.5, MD:6,
+            MA:6.25, MI:6, MN:6.875, MS:7, MO:4.225, MT:0, NE:5.5, NV:6.85, NH:0, NJ:6.625,
+            NM:5.125, NY:4, NC:4.75, ND:5, OH:5.75, OK:4.5, OR:0, PA:6, RI:7, SC:6,
+            SD:4.5, TN:7, TX:6.25, UT:4.85, VT:6, VA:4.3, WA:6.5, WV:6, WI:5, WY:4
+        };
 
         
         function addToCart(productId, quantityString) {
@@ -1276,12 +1359,15 @@
                     // Find the product details to get the current maximum stock
                     const productDetails = productsData.find(p => p.id === item.id);
                     const maxStock = productDetails ? productDetails.stock : item.quantity;
+                    const price = (item.price !== undefined) ? item.price : (productDetails ? productDetails.price : 0);
+                    const lineTotal = (price * item.quantity) || 0;
 
                     return `
                     <div class="cart-item">
                         <div class="cart-item-info">
                             <h3>${item.name}</h3>
                             <p>${item.description}</p>
+                            <p style="margin: 0.25rem 0; color: #e0e0e0;">Price: <strong style="color: #00ff88;">$${price.toFixed(2)}</strong> &nbsp; Line: <strong style="color: #00ff88;">$${lineTotal.toFixed(2)}</strong></p>
                             <div class="quantity-control" style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
                                 <label for="cartQty-${item.id}" style="color: #ffff00; font-weight: bold;">Qty:</label>
                                 <input type="number" id="cartQty-${item.id}" value="${item.quantity}" min="1" max="${maxStock}" 
@@ -1294,6 +1380,25 @@
                         </div>
                     </div>
                 `}).join('');
+
+                // After rendering items, update subtotal, tax, and total price display
+                const subtotal = cartItems.reduce((sum, it) => {
+                    const pd = productsData.find(p => p.id === it.id);
+                    const p = (it.price !== undefined) ? it.price : (pd ? pd.price : 0);
+                    return sum + (p * it.quantity);
+                }, 0);
+                const stateSelect = document.getElementById('taxStateSelect');
+                const state = stateSelect ? stateSelect.value : '';
+                const rate = (state && taxRates[state] !== undefined) ? taxRates[state] : 0;
+                const taxAmount = subtotal * (rate / 100);
+                const grandTotal = subtotal + taxAmount;
+
+                const subtotalEl = document.getElementById('subtotalPrice');
+                const taxEl = document.getElementById('taxAmount');
+                const totalPriceEl = document.getElementById('totalPrice');
+                if (subtotalEl) subtotalEl.textContent = '$' + subtotal.toFixed(2);
+                if (taxEl) taxEl.textContent = '$' + taxAmount.toFixed(2) + (rate ? (' (' + rate.toFixed(2) + '%)') : '');
+                if (totalPriceEl) totalPriceEl.textContent = '$' + grandTotal.toFixed(2);
             }
         }
         
