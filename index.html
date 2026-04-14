@@ -822,7 +822,92 @@
             font-size: 1.2rem;
             margin-top: 3rem;
         }
+<style>
+    /* ... Keep your existing base styles ... */
 
+    /* [MOBILE OPTIMIZATION: Typography & Spacing] */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.2rem;
+            padding: 0 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+        }
+        .section-title, .about-page h1, .cigars-page h1 {
+            font-size: 2rem;
+        }
+        .btn {
+            font-size: 1.2rem;
+            padding: 0.8rem 1.8rem;
+        }
+    }
+
+    /* [MOBILE OPTIMIZATION: Navigation] */
+    @media (max-width: 600px) {
+        nav {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .logo-text {
+            font-size: 1.4rem;
+        }
+        .nav-links {
+            gap: 1rem;
+        }
+        .nav-links a {
+            font-size: 1rem;
+        }
+        header {
+            padding: 1rem 0;
+        }
+    }
+
+    /* [MOBILE OPTIMIZATION: Cart & Product Cards] */
+    @media (max-width: 480px) {
+        .product-card {
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        
+        .cart-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+        
+        .cart-item-actions {
+            width: 100%;
+        }
+        
+        .remove-btn {
+            width: 100%;
+            padding: 0.8rem; /* Larger touch target */
+        }
+
+        .quantity-control {
+            justify-content: center;
+        }
+        
+        /* Ensure inputs are easy to tap */
+        input[type="number"] {
+            height: 44px; 
+            font-size: 16px; /* Prevents iOS auto-zoom on focus */
+        }
+    }
+
+    /* [MOBILE OPTIMIZATION: Layout Fixes] */
+    .about-page-content, .cigars-page-content, .cart-page-content {
+        padding-top: 140px; /* Adjusted for the stacked mobile header */
+    }
+
+    @media (min-width: 601px) {
+        .about-page-content, .cigars-page-content, .cart-page-content {
+            padding-top: 8rem;
+        }
+    }
+</style>
     </style>
 </head>
 <body>
@@ -1168,8 +1253,8 @@
         // Initial product data
         // DELISTED OLIVA AND PADRON (IDs 4 & 5)
         let productsData = [
-            { id: 1, brand: 'EP Carrillo', name: 'EP Carrillo Pledge Sojourn', size: '6.00x52', price: 14.00, stock: 18 },
-            { id: 2, brand: 'A.J. Fernandez', name: 'AJ Fernandez Decenio 10th Anniversary Toro', size: '6.50x54', price: 14.00, stock: 18 },
+            { id: 1, brand: 'EP Carrillo', name: 'EP Carrillo Pledge Sojourn', size: '6.00x52', price: 14.00, stock: 19 },
+            { id: 2, brand: 'A.J. Fernandez', name: 'AJ Fernandez Decenio 10th Anniversary Toro', size: '6.50x54', price: 14.00, stock: 19 },
             { id: 3, brand: 'Arturo Fuente', name: 'Arturo Fuente Conquistadores Natural', size: '5.50x56', price: 8.00, stock: 28 }
         ];
 
