@@ -15,7 +15,7 @@
             font-family: 'Myriad Pro', 'Myriad', 'Arial', sans-serif;
             color: #e0e0e0;
             line-height: 1.6;
-            background-color: #000000; /* Solid Black Background */
+            background-color: #000000;
         }
 
         header {
@@ -60,48 +60,6 @@
             align-items: center;
             gap: 2rem;
         }
-        
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            padding: 0.5rem;
-            transition: all 0.3s;
-        }
-        
-        .cart-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        .cart-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: #00ff88;
-            fill: none;
-            stroke-width: 2;
-            filter: drop-shadow(0 0 5px rgba(0,255,136,0.5));
-        }
-        
-        .cart-icon:hover svg {
-            stroke: #ffff00;
-            filter: drop-shadow(0 0 10px rgba(255,255,0,0.7));
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(135deg, #ffff00 0%, #00ff88 100%);
-            color: #0a0a0a;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(0,255,255,0.5);
-        }
 
         .nav-links {
             display: flex;
@@ -130,51 +88,12 @@
             padding: 8rem 2rem;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0,255,255,0.8), 2px 2px 4px rgba(0,0,0,0.7);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #00ff88;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #ffff00 0%, #00ff88 100%);
-            color: #0a0a0a;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 20px rgba(0,255,255,0.5);
-            font-size: 1.5rem;
-        }
-
-        .btn:hover {
-            background: linear-gradient(135deg, #00ffff 0%, #00ff88 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0,255,255,0.8);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
         .home-logo-section {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 6rem 2rem; 
-            min-height: calc(100vh - 80px - 200px); 
+            min-height: calc(100vh - 300px); 
             background-color: #000000; 
         }
         
@@ -182,155 +101,16 @@
             max-width: 70%; 
             width: auto;
             height: auto;
-            border-radius: 0;
-            box-shadow: none;
             max-height: 50vh;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0,255,255,0.6);
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .product-card {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,255,255,0.2);
-            transition: transform 0.3s;
-            border: 1px solid rgba(0,255,136,0.3);
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0,255,255,0.4);
-            border-color: #00ffff;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            /* BACKGROUND, COLOR, and FONT SIZE REMOVED TO GET RID OF GREEN BOX AND BLUE 'X' */
-            /* If you want a subtle background behind the images, you can add a solid color here: */
-            background-color: #0a0a0a; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* NEW RULE to make the product image fit nicely */
-        .cigar-img {
-            max-width: 100%; /* Image won't exceed the width of its container */
-            max-height: 100%; /* Image won't exceed the height of its container (250px) */
-            object-fit: contain; /* Scales image down to fit without cropping */
-            display: block;
-        }
-
-        /* Ensure any img inside .product-image fills the area and crops nicely */
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* crop to fill the box */
-            display: block;
-        }
-
-        /* Smaller image height on narrow screens */
-        @media (max-width: 480px) {
-            .product-image {
-                height: 180px;
-            }
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
-
-        .product-info h3 {
-            color: #00ffff;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px rgba(0,255,255,0.5);
-        }
-
-        .about {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            color: #e0e0e0;
-            padding: 4rem 2rem;
-            margin-top: 2rem;
-            border-top: 2px solid #00ff88;
-            border-bottom: 2px solid #00ffff;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content h2 {
-            color: #00ffff;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 20px rgba(0,255,255,0.6);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ffff00;
-            text-shadow: 0 0 20px rgba(255,255,0,0.6);
-        }
-
-        /* --- START Footer Styles (Consistent across all pages) --- */
+        /* Footer Styles */
         footer {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
             color: #00ff88;
             padding: 2rem;
             margin-top: 4rem;
             border-top: 2px solid #00ffff;
-        }
-        
-        .footer-left p {
-            color: #00ff88;
-        }
-        
-        .footer-left p:last-child {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .footer-right p strong {
-            color: #00ff88;
-            font-weight: bold;
-        }
-        
-        .footer-right a {
-            color: #00ff88;
-            text-decoration: none;
-        }
-        
-        .footer-right p:last-child {
-            margin-top: 0.5rem;
         }
         
         .footer-content {
@@ -343,12 +123,8 @@
             gap: 2rem;
         }
         
-        .footer-left {
-            text-align: left;
-        }
-        
-        .footer-right {
-            text-align: right;
+        .footer-left p, .footer-right p {
+            color: #00ff88;
         }
         
         .footer-center {
@@ -356,128 +132,21 @@
             text-align: center;
             margin-top: 1rem;
         }
-        /* --- END Footer Styles --- */
-        
-        /* [COLOR FIX]: Override default inheritance for footer text on overlay pages */
-        .cigars-page .footer-left p, 
-        .about-page .footer-left p,
-        .cart-page .footer-left p {
-            color: #00ff88;
-        }
-        
-        .cigars-page .footer-right p,
-        .about-page .footer-right p,
-        .cart-page .footer-right p {
-            color: #00ff88;
-        }
-        
-        .cigars-page .footer-right p strong,
-        .about-page .footer-right p strong,
-        .cart-page .footer-right p strong {
-            color: #00ff88;
-        }
 
-        @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-left,
-            .footer-right {
-                text-align: center;
-                width: 100%;
-            }
-            
-            .home-logo-section img {
-                max-width: 90%; 
-            }
-            
-            .hero {
-                padding: 4rem 2rem;
-            }
-        }
-
-        .contact-info {
-            margin-top: 1rem;
-        }
-        
         .privacy-link {
-            display: inline-block;
-            margin-top: 1rem;
             color: #00ffff;
             text-decoration: none;
             transition: color 0.3s;
             cursor: pointer;
         }
-        
+
         .privacy-link:hover {
             color: #ffff00;
             text-decoration: underline;
         }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.8);
-        }
-        
-        .modal-content {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            margin: 2% auto;
-            padding: 2rem;
-            border: 2px solid #00ffff;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 900px;
-            max-height: 85vh;
-            overflow-y: auto;
-            color: #e0e0e0;
-            box-shadow: 0 0 30px rgba(0,255,255,0.4);
-        }
-        
-        .modal-content h2 {
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0,255,255,0.6);
-            margin-bottom: 1rem;
-        }
-        
-        .modal-content h3 {
-            color: #00ff88;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .close {
-            color: #ffff00;
-            float: right;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close:hover {
-            color: #00ffff;
-        }
-        
-        .modal-content p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .modal-content ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .about-page {
+
+        /* Modal & About Page Styles */
+        .modal, .about-page {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -488,33 +157,24 @@
             overflow: auto;
             background-color: #0a0a0a;
         }
-        
-        /* [HEIGHT/DIMENSION FIX] Reduced bottom padding from 4rem to 2rem */
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            margin: 5% auto;
+            padding: 2rem;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 900px;
+            color: #e0e0e0;
+        }
+
         .about-page-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem 2rem 2rem; 
+            padding: 8rem 2rem 4rem 2rem; 
         }
-        
-        .back-button {
-            background: linear-gradient(135deg, #ffff00 0%, #00ff88 100%);
-            color: #0a0a0a;
-            padding: 0.7rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 20px rgba(0,255,255,0.5);
-            cursor: pointer;
-        }
-        
-        .back-button:hover {
-            background: linear-gradient(135deg, #00ffff 0%, #00ff88 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0,255,255,0.8);
-        }
-        
+
         .about-page h1 {
             color: #00ffff;
             text-shadow: 0 0 20px rgba(0,255,255,0.6);
@@ -522,380 +182,44 @@
             margin-bottom: 2rem;
             text-align: center;
         }
-        
-        .about-page p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #e0e0e0;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 2px solid #00ff88;
-            box-shadow: 0 4px 20px rgba(0,255,136,0.2);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            color: #00ffff;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: #0a0a0a;
-            border: 2px solid #00ff88;
-            border-radius: 5px;
-            color: #e0e0e0;
-            font-family: 'Myriad Pro', 'Myriad', 'Arial', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #00ffff;
-            box-shadow: 0 0 10px rgba(0,255,255,0.3);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #ffff00 0%, #00ff88 100%);
-            color: #0a0a0a;
-            padding: 1rem 2.5rem;
-            border: 2px solid #00ffff;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(0,255,255,0.5);
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background: linear-gradient(135deg, #00ffff 0%, #00ff88 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0,255,255,0.8);
-        }
-        
-        .contact-details {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid #00ff88;
-        }
-        
-        
-        /* [HEIGHT/DIMENSION FIX] Reduced bottom padding from 4rem to 2rem */
-        
-        
-        
-        .cigars-page {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: #0a0a0a;
-        }
-        
-        /* [HEIGHT/DIMENSION FIX] Reduced bottom padding from 4rem to 2rem */
-        .cigars-page-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 6rem 2rem 2rem 2rem;
-        }
-        
-        .cigars-page h1 {
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0,255,255,0.6);
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .cigars-page .intro-text {
-            text-align: center;
-            color: #e0e0e0;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
+
+        .close {
             color: #ffff00;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-        
-        .product-brand {
-            color: #00ff88;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        
-        .add-to-cart-btn {
-            background: linear-gradient(135deg, #ffff00 0%, #00ff88 100%);
-            color: #0a0a0a;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid #00ffff;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 0 15px rgba(0,255,255,0.5);
-            width: 100%;
-            font-size: 1rem;
-            /* margin-top: 1rem; Removed to align with quantity input */
-        }
-        
-        .add-to-cart-btn:hover {
-            background: linear-gradient(135deg, #00ffff 0%, #00ff88 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(0,255,255,0.8);
-        }
-        
-        .add-to-cart-btn:disabled {
-            background: #555555;
-            cursor: not-allowed;
-            box-shadow: none;
-            border: 2px solid #555555;
-            color: #ccc;
-        }
-        
-        .cart-page {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: #0a0a0a;
-        }
-        
-        /* [HEIGHT/DIMENSION FIX] Reduced bottom padding from 4rem to 2rem */
-        .cart-page-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 6rem 2rem 2rem 2rem;
-        }
-        
-        .cart-page-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1001;
-            padding: 1.5rem 2rem;
-            border-bottom: 2px solid #00ffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .cart-page h1 {
-            color: #00ffff;
-            text-shadow: 0 0 20px rgba(0,255,255,0.6);
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .cart-items {
-            margin-bottom: 2rem;
-        }
-        
-        .cart-item {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            border: 2px solid #00ff88;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
-        }
-        
-        .cart-item:hover {
-            border-color: #00ffff;
-            box-shadow: 0 0 20px rgba(0,255,255,0.3);
-        }
-        
-        .cart-item-info h3 {
-            color: #00ffff;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cart-item-info p {
-            color: #e0e0e0;
-        }
-        
-        .cart-item-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-        
-        .remove-btn {
-            background-color: #ff4444;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        
-        .remove-btn:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
-        }
-        
-        .cart-summary {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-            border: 2px solid #00ffff;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .cart-summary h2 {
-            color: #00ffff;
-            margin-bottom: 1rem;
-        }
-        
-        .checkout-btn {
-            background: linear-gradient(135deg, #ffff00 0%, #00ff88 100%);
-            color: #0a0a0a;
-            padding: 1rem 3rem;
-            border: 2px solid #00ffff;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(0,255,255,0.5);
-            margin-top: 1rem;
-        }
-        
-        .checkout-btn:hover {
-            background: linear-gradient(135deg, #00ffff 0%, #00ff88 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0,255,255,0.8);
-        }
-        
-        .empty-cart {
-            text-align: center;
-            color: #e0e0e0;
-            font-size: 1.2rem;
-            margin-top: 3rem;
-        }
-<style>
-    /* ... Keep your existing base styles ... */
-
-    /* [MOBILE OPTIMIZATION: Typography & Spacing] */
-    @media (max-width: 768px) {
-        .hero h1 {
-            font-size: 2.2rem;
-            padding: 0 1rem;
-        }
-        .hero p {
-            font-size: 1.1rem;
-        }
-        .section-title, .about-page h1, .cigars-page h1 {
+            float: right;
             font-size: 2rem;
-        }
-        .btn {
-            font-size: 1.2rem;
-            padding: 0.8rem 1.8rem;
-        }
-    }
-
-    /* [MOBILE OPTIMIZATION: Navigation] */
-    @media (max-width: 600px) {
-        nav {
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1rem;
-        }
-        .logo-text {
-            font-size: 1.4rem;
-        }
-        .nav-links {
-            gap: 1rem;
-        }
-        .nav-links a {
-            font-size: 1rem;
-        }
-        header {
-            padding: 1rem 0;
-        }
-    }
-
-    /* [MOBILE OPTIMIZATION: Cart & Product Cards] */
-    @media (max-width: 480px) {
-        .product-card {
-            margin: 0 auto;
-            max-width: 100%;
-        }
-        
-        .cart-item {
-            flex-direction: column;
-            text-align: center;
-            gap: 1rem;
-        }
-        
-        .cart-item-actions {
-            width: 100%;
-        }
-        
-        .remove-btn {
-            width: 100%;
-            padding: 0.8rem; /* Larger touch target */
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        .quantity-control {
-            justify-content: center;
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .home-logo-section img { max-width: 90%; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .about-page h1 { font-size: 2rem; }
         }
-        
-        /* Ensure inputs are easy to tap */
-        input[type="number"] {
-            height: 44px; 
-            font-size: 16px; /* Prevents iOS auto-zoom on focus */
-        }
-    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="logo-container">
+                <img src="images/logo3.jpeg" alt="Bapir Holdings Logo" class="logo">
+                <span class="logo-text">BAPIR HOLDINGS</span>
+            </a>
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#" onclick="openAboutPage(); return false;">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero"></section>
+
+    <section class="home-logo-section">
+        <img src="images/logo3.jpeg" alt="Bapir Holdings Neon Logo">
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -912,7 +236,7 @@
             <a href="#" class="privacy-link" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
         </div>
     </footer>
-    
+
     <div id="aboutPage" class="about-page">
         <header>
             <nav>
@@ -920,500 +244,42 @@
                     <img src="images/logo3.jpeg" alt="Bapir Holdings Logo" class="logo">
                     <div class="logo-text">BAPIR HOLDINGS</div>
                 </a>
-                <div class="nav-center">
-                    <ul class="nav-links">
-                        <li><a href="#home" onclick="closeAboutPage(); return false;">Home</a></li>
-                        <li><a href="#" onclick="closeAboutPage(); openCigarsPage(); return false;">Cigars</a></li>
-                        <li><a href="#" onclick="return false;">About</a></li>
-                    </ul>
-                    <div class="cart-icon" onclick="openCart()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span class="cart-count" id="cartCountAbout">0</span>
-                    </div>
-                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" onclick="closeAboutPage(); return false;">Home</a></li>
+                    <li><a href="#" onclick="return false;">About</a></li>
+                </ul>
             </nav>
         </header>
         <div class="about-page-content">
             <h1>About Bapir Holdings</h1>
-            <p>Established in Boston, MA in June 2025, Bapir Holdings is a small independent business</p>
+            <p>Established in Boston, MA in June 2025, Bapir Holdings is a small independent cigar business dedicated to bringing premium cigar experiences to enthusiasts and connoisseurs alike. We pride ourselves on carrying some of the most popular and respected brands in the market.</p>
+            <p>Our commitment to quality and customer satisfaction means we carefully select each brand and product to ensure you have access to the finest cigars available. Whether you're a seasoned aficionado or just beginning your cigar journey, we're here to provide exceptional products and personalized service.</p>
+            <p>Located in the heart of Boston, we serve cigar enthusiasts throughout Massachusetts and beyond. Our knowledgeable team is passionate about cigars and dedicated to helping you find the perfect smoke for any occasion.</p>
         </div>
-        
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; 2026 Bapir Holdings LLC. All rights reserved.</p>
-                    <p>Exceptional Quality</p>
-                </div>
-                <div class="footer-right">
-                    <p><strong>Email:</strong> bapirholdings@icloud.com</p>
-                    <p><strong>Phone:</strong> (617) 863-8077</p>
-                </div>
-            </div>
-            <div class="footer-center">
-                <a href="#" class="privacy-link" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
-            </div>
-        </footer>
-    </div>
-
-
-    <div id="cartPage" class="cart-page">
-        <div class="cart-page-header">
-            <h2 style="color: #00ffff; margin: 0;">Shopping Cart</h2>
-            <button class="back-button" onclick="closeCartPage()">← Continue Shopping</button>
-        </div>
-        <div class="cart-page-content">
-            <h1>Your Cart</h1>
-            
-            <div id="cartItemsContainer" class="cart-items">
-                </div>
-            
-            <div id="emptyCartMessage" class="empty-cart" style="display: none;">
-                <p>Your cart is empty. Start shopping to add items!</p>
-            </div>
-            
-            <div id="cartSummary" class="cart-summary" style="display: none;">
-                <h2>Cart Summary</h2>
-                <p style="color: #e0e0e0; font-size: 1.2rem; margin: 1rem 0;">Total Items: <span id="totalItems" style="color: #00ff88; font-weight: bold;">0</span></p>
-                <p style="color: #e0e0e0; font-size: 1.1rem; margin: 0.25rem 0;">Subtotal: <span id="subtotalPrice" style="color: #00ff88; font-weight: bold;">$0.00</span></p>
-                <div style="display:flex; gap:8px; align-items:center; margin:0.25rem 0;">
-                    <label for="taxStateSelect" style="color:#e0e0e0;">State:</label>
-                    <select id="taxStateSelect" onchange="renderCart()" style="background:#0a0a0a; color:#e0e0e0; border:1px solid #00ff88; padding:4px 6px;">
-                        <option value="">-- Select state --</option>
-                        <option value="MA" selected>MA</option>
-                        <option value="AL">AL</option>
-                        <option value="AK">AK</option>
-                        <option value="AZ">AZ</option>
-                        <option value="AR">AR</option>
-                        <option value="CA">CA</option>
-                        <option value="CO">CO</option>
-                        <option value="CT">CT</option>
-                        <option value="DE">DE</option>
-                        <option value="FL">FL</option>
-                        <option value="GA">GA</option>
-                        <option value="HI">HI</option>
-                        <option value="ID">ID</option>
-                        <option value="IL">IL</option>
-                        <option value="IN">IN</option>
-                        <option value="IA">IA</option>
-                        <option value="KS">KS</option>
-                        <option value="KY">KY</option>
-                        <option value="LA">LA</option>
-                        <option value="ME">ME</option>
-                        <option value="MD">MD</option>
-                        <option value="MI">MI</option>
-                        <option value="MN">MN</option>
-                        <option value="MS">MS</option>
-                        <option value="MO">MO</option>
-                        <option value="MT">MT</option>
-                        <option value="NE">NE</option>
-                        <option value="NV">NV</option>
-                        <option value="NH">NH</option>
-                        <option value="NJ">NJ</option>
-                        <option value="NM">NM</option>
-                        <option value="NY">NY</option>
-                        <option value="NC">NC</option>
-                        <option value="ND">ND</option>
-                        <option value="OH">OH</option>
-                        <option value="OK">OK</option>
-                        <option value="OR">OR</option>
-                        <option value="PA">PA</option>
-                        <option value="RI">RI</option>
-                        <option value="SC">SC</option>
-                        <option value="SD">SD</option>
-                        <option value="TN">TN</option>
-                        <option value="TX">TX</option>
-                        <option value="UT">UT</option>
-                        <option value="VT">VT</option>
-                        <option value="VA">VA</option>
-                        <option value="WA">WA</option>
-                        <option value="WV">WV</option>
-                        <option value="WI">WI</option>
-                        <option value="WY">WY</option>
-                    </select>
-                </div>
-                <p style="color: #e0e0e0; font-size: 1.1rem; margin: 0.25rem 0;">Tax: <span id="taxAmount" style="color: #00ff88; font-weight: bold;">$0.00</span></p>
-                <p style="color: #e0e0e0; font-size: 1.2rem; margin: 0.25rem 0;">Grand Total: <span id="totalPrice" style="color: #00ff88; font-weight: bold;">$0.00</span></p>
-                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-            </div>
-        </div>
-        
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; 2026 Bapir Holdings LLC. All rights reserved.</p>
-                    <p>Exceptional Quality</p>
-                </div>
-                <div class="footer-right">
-                    <p><strong>Email:</strong> bapirholdings@icloud.com</p>
-                    <p><strong>Phone:</strong> (617) 863-8077</p>
-                </div>
-            </div>
-            <div class="footer-center">
-                <a href="#" class="privacy-link" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
-            </div>
-        </footer>
     </div>
 
     <div id="privacyModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closePrivacyModal()">&times;</span>
             <h2>Privacy Policy</h2>
-            
-            <p>Bapir Holdings LLC is firmly committed to the protection and respect of your privacy. Following, we will outline our policy regarding the collection and use of information obtained from our customers, visitors and guests. If you have any questions or concerns regarding our privacy policies, or if you would like to unsubscribe from receiving any communications from Bapir Holdings LLC, please contact us at bapirholdings@icloud.com.</p>
-            
-            <p>Maintaining your privacy is a crucial priority at Bapir Holdings LLC. We do not sell, share or rent your information to other parties in any manner other than expressly disclosed in this statement. Please review our Privacy Policy for a clear understanding of the measures we employ to protect you and guard the information you provide to us.</p>
-            
+            <p>Bapir Holdings LLC is firmly committed to the protection and respect of your privacy. We do not sell, share or rent your information to other parties.</p>
             <h3>Information Collected</h3>
-            <p>We collect and store the information you enter on our website, as well as any information you provide to us in any other way. You may choose not to provide certain information, but as a result you may be prohibited from accessing specific attributes of online shopping.</p>
-            
-            <h3>Why We Request Your Information</h3>
-            <p>Bapir Holdings LLC collects information about customers for the purpose of enhancing site navigation, expediting order placement and providing an overall exceptional online shopping experience. Complete satisfaction and superior customer service from your initial order placement to the product reaching your doorstep are fundamental priorities at Bapir Holdings LLC.</p>
-            
-            <h3>How We Request Your Information</h3>
-            <p>We prompt you to supply your contact, billing and shipping information as you create an account during the order process. This information is required to complete a purchase and is used to contact you regarding your order. Correct billing, shipping and contact information, such as email and phone number, are necessary for Bapir Holdings LLC to process your order. Transfer of this information is secure and cannot be received or accessed by others.</p>
-            
-            <h3>How We Use Information We Request</h3>
-            <p>Third parties are utilized to perform services in conjunction with Bapir Holdings LLC operations. Payment processing and authorization, fraud protection, age verification, order fulfillment and shipping, website evaluation, data analysis, as well as the distribution of marketing materials are all examples of third party services used by Bapir Holdings LLC. Personal information provided to third parties by Bapir Holdings LLC is authorized for use only in conjunction with the services third parties perform.</p>
-            
-            <h3>California Privacy Act Disclosure</h3>
-            <p>The California Consumer Privacy Act of 2018 (CCPA) provides consumers who are California residents with explicit rights regarding their personal information.</p>
-            <p><strong>Bapir Holdings LLC does not sell your personal information.</strong></p>
-            <p>You have the right to request deletion of the personal information collected or maintained by Bapir Holdings LLC. Deletion of personal information may affect our ability to manage your account. You have the right to request that Bapir Holdings LLC disclose what personal information we collect, use, and disclose.</p>
-            
-            <h3>Cookies</h3>
-            <p>Our website is committed to a privacy-first experience and does not use cookies of any kind. We do not use tracking, advertising, or preference-based cookies to monitor your behavior or store data on your device. This site is designed to function fully without these technologies, ensuring that your browsing session remains private and that no tracking data is shared with third parties. If this approach ever changes, we will update this statement immediately to ensure total transparency.</p>
-            
-            <h3>Security</h3>
-            <p>The protection of your privacy and personal information is a major priority at Bapir Holdings LLC. We utilize industry-standard systems and procedures to safeguard against unauthorized access to information collected online and to ensure that it is used appropriately.</p>
-            <p>We use Secure Sockets Layer (SSL) software, which encrypts information you provide during transmission. All of your information, including credit card numbers, is encrypted so that it cannot be read during its exchange over the internet. In addition, we recommend protecting unauthorized access to your password and to your computer.</p>
-            
-            <h3>Changes to Our Privacy Policy</h3>
-            <p>You will be notified via email in the event that our Privacy Policy is modified in a manner that will affect your personally identifiable information.</p>
-            
+            <p>We collect and store information you provide to us to enhance your experience and facilitate communication.</p>
             <h3>Contact Us</h3>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p><strong>Email:</strong> bapirholdings@icloud.com<br>
-            <strong>Phone:</strong> (617) 863-8077</p>
+            <p>Email: bapirholdings@icloud.com<br>Phone: (617) 863-8077</p>
         </div>
     </div>
-    
-
 
     <script>
-        // Shopping cart functionality
-        // Cart items now store the total quantity for a given product ID
-        let cartItems = [];
-        
-        // Initial product data
-        // DELISTED OLIVA AND PADRON (IDs 4 & 5)
-        let productsData = [
-            { id: 1, brand: 'EP Carrillo', name: 'EP Carrillo Pledge Sojourn', size: '6.00x52', price: 14.00, stock: 18 },
-            { id: 2, brand: 'A.J. Fernandez', name: 'AJ Fernandez Decenio 10th Anniversary Toro', size: '6.50x54', price: 14.00, stock: 18 },
-            { id: 3, brand: 'Arturo Fuente', name: 'Arturo Fuente Conquistadores Natural', size: '5.50x56', price: 8.00, stock: 28 }
-        ];
-
-        // Simple sales tax rates (state-level base rates, percentage). These are approximate base rates.
-        const taxRates = {
-            AL:4, AK:0, AZ:5.6, AR:6.5, CA:7.25, CO:2.9, CT:6.35, DE:0, FL:6, GA:4,
-            HI:4, ID:6, IL:6.25, IN:7, IA:6, KS:6.5, KY:6, LA:4.45, ME:5.5, MD:6,
-            MA:6.25, MI:6, MN:6.875, MS:7, MO:4.225, MT:0, NE:5.5, NV:6.85, NH:0, NJ:6.625,
-            NM:5.125, NY:4, NC:4.75, ND:5, OH:5.75, OK:4.5, OR:0, PA:6, RI:7, SC:6,
-            SD:4.5, TN:7, TX:6.25, UT:4.85, VT:6, VA:4.3, WA:6.5, WV:6, WI:5, WY:4
-        };
-
-        
-        function addToCart(productId, quantityString) {
-            const id = parseInt(productId);
-            const quantity = parseInt(quantityString);
-            
-            if (quantity < 1 || isNaN(quantity)) {
-                alert('Please enter a valid quantity of 1 or more.');
-                return;
-            }
-
-            const product = productsData.find(p => p.id === id);
-            if (!product) return; 
-
-            const existingItem = cartItems.find(item => item.id === id);
-            const currentCartQuantity = existingItem ? existingItem.quantity : 0;
-            const newTotalQuantity = currentCartQuantity + quantity;
-
-            if (newTotalQuantity > product.stock) {
-                alert(`Cannot add ${quantity} more. Only ${product.stock - currentCartQuantity} units of ${product.name} left in stock.`);
-                return;
-            }
-            
-            if (product.stock === 0) {
-                alert(`${product.name} is currently out of stock.`);
-                return;
-            }
-
-
-            if (existingItem) {
-                existingItem.quantity = newTotalQuantity;
-            } else {
-                cartItems.push({
-                    id: product.id,
-                    name: product.name + ' ' + product.size,
-                    description: `$${product.price.toFixed(2)} per cigar`,
-                    price: product.price,
-                    quantity: quantity
-                });
-            }
-            
-            // Reset quantity input to 1 and update stock indicator/button
-            const qtyInput = document.getElementById(`qty-${id}`);
-            if (qtyInput) {
-                const remainingStock = product.stock - newTotalQuantity;
-                
-                // Update the maximum value in case stock was reduced
-                qtyInput.max = remainingStock;
-                
-                // Reset input to 1 or 0 if remaining stock is 0
-                qtyInput.value = remainingStock > 0 ? 1 : 0; 
-                
-                // Update the stock indicator and button for the item if its stock changes
-                const productCard = qtyInput.closest('.product-card');
-                if(productCard) {
-                    const stockIndicator = productCard.querySelector('p[style*="font-size: 0.9rem"]');
-                    const button = productCard.querySelector('.add-to-cart-btn');
-
-                    if (remainingStock <= 0) {
-                        stockIndicator.innerHTML = `<span style="color: #ff4444;">Out of Stock</span>`;
-                        button.disabled = true;
-                        button.textContent = 'Out of Stock';
-                        qtyInput.disabled = true;
-                        qtyInput.style.color = '#ff4444';
-                    } else if (stockIndicator.querySelector('span[style*="ff4444"]')) {
-                        // If it was OOS but now has stock
-                        stockIndicator.innerHTML = 'In Stock';
-                        stockIndicator.style.color = '#00ff88';
-                        button.disabled = false;
-                        button.textContent = 'Add to Cart';
-                        qtyInput.disabled = false;
-                        qtyInput.style.color = '#e0e0e0';
-                    }
-                }
-            }
-
-
-            updateCartCount();
-            alert(`✅ Added ${quantity} x ${product.name} to your cart!`);
-        }
-        
-        // NEW FUNCTIONALITY: Update quantity of an item already in the cart
-        function updateCartQuantity(productId, newQuantityString) {
-            const id = parseInt(productId);
-            let newQuantity = parseInt(newQuantityString);
-
-            const itemToUpdate = cartItems.find(item => item.id === id);
-            const productDetails = productsData.find(p => p.id === id);
-
-            if (!itemToUpdate || !productDetails) return;
-            
-            // Input validation
-            if (isNaN(newQuantity) || newQuantity < 1) {
-                newQuantity = 1; // Default to 1 if invalid input is provided
-            }
-
-            // Check against max stock
-            if (newQuantity > productDetails.stock) {
-                alert(`Maximum stock for ${productDetails.name} is ${productDetails.stock}. Setting quantity to maximum.`);
-                newQuantity = productDetails.stock;
-            }
-
-            // If quantity is set to 0 or less, treat as remove all (though input is min="1")
-            if (newQuantity < 1) {
-                 removeFromCart(id);
-                 return;
-            }
-
-            itemToUpdate.quantity = newQuantity;
-            
-            updateCartCount();
-            renderCart(); // Re-render to update the quantity input field and ensure stock is correct
-
-            // This is crucial to update the stock display on the main cigars page
-            if(document.getElementById('cigarsPage').style.display === 'block') {
-                renderCigarsProductList(); 
-            }
-        }
-
-        
-        // Updated to remove ALL of a product ID from the cart
-        function removeFromCart(productId) {
-            cartItems = cartItems.filter(item => item.id !== productId);
-            updateCartCount();
-            renderCart();
-            // Re-render cigars page to update stock if it's open
-            if(document.getElementById('cigarsPage').style.display === 'block') {
-                renderCigarsProductList();
-            }
-        }
-        
-        // Updated to sum quantities, not just item count
-        function updateCartCount() {
-            const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartCount').textContent = totalCount;
-            // Update cart counts on all pages
-            const cartCountIds = ['cartCountCigars', 'cartCountAbout'];
-            cartCountIds.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.textContent = totalCount;
-                }
-            });
-        }
-        
-        function openCart() {
-            document.getElementById('cartPage').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            window.scrollTo(0, 0);
-            renderCart();
-        }
-        
-        function closeCartPage() {
-            document.getElementById('cartPage').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        function renderCart() {
-            const container = document.getElementById('cartItemsContainer');
-            const emptyMessage = document.getElementById('emptyCartMessage');
-            const summary = document.getElementById('cartSummary');
-            
-            if (cartItems.length === 0) {
-                container.innerHTML = '';
-                emptyMessage.style.display = 'block';
-                summary.style.display = 'none';
-            } else {
-                emptyMessage.style.display = 'none';
-                summary.style.display = 'block';
-                
-                // Calculate total items (sum of quantities)
-                const totalItemsCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-                document.getElementById('totalItems').textContent = totalItemsCount;
-                
-                container.innerHTML = cartItems.map(item => {
-                    // Find the product details to get the current maximum stock
-                    const productDetails = productsData.find(p => p.id === item.id);
-                    const maxStock = productDetails ? productDetails.stock : item.quantity;
-                    const price = (item.price !== undefined) ? item.price : (productDetails ? productDetails.price : 0);
-                    const lineTotal = (price * item.quantity) || 0;
-
-                    return `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <h3>${item.name}</h3>
-                            <p>${item.description}</p>
-                            <p style="margin: 0.25rem 0; color: #e0e0e0;">Price: <strong style="color: #00ff88;">$${price.toFixed(2)}</strong> &nbsp; Line: <strong style="color: #00ff88;">$${lineTotal.toFixed(2)}</strong></p>
-                            <div class="quantity-control" style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
-                                <label for="cartQty-${item.id}" style="color: #ffff00; font-weight: bold;">Qty:</label>
-                                <input type="number" id="cartQty-${item.id}" value="${item.quantity}" min="1" max="${maxStock}" 
-                                    style="width: 50px; padding: 5px; border-radius: 5px; border: 1px solid #00ff88; background: #0a0a0a; color: #e0e0e0; text-align: center;"
-                                    onchange="updateCartQuantity(${item.id}, this.value)">
-                            </div>
-                        </div>
-                        <div class="cart-item-actions">
-                            <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove All</button>
-                        </div>
-                    </div>
-                `}).join('');
-
-                // After rendering items, update subtotal, tax, and total price display
-                const subtotal = cartItems.reduce((sum, it) => {
-                    const pd = productsData.find(p => p.id === it.id);
-                    const p = (it.price !== undefined) ? it.price : (pd ? pd.price : 0);
-                    return sum + (p * it.quantity);
-                }, 0);
-                const stateSelect = document.getElementById('taxStateSelect');
-                const state = stateSelect ? stateSelect.value : '';
-                const rate = (state && taxRates[state] !== undefined) ? taxRates[state] : 0;
-                const taxAmount = subtotal * (rate / 100);
-                const grandTotal = subtotal + taxAmount;
-
-                const subtotalEl = document.getElementById('subtotalPrice');
-                const taxEl = document.getElementById('taxAmount');
-                const totalPriceEl = document.getElementById('totalPrice');
-                if (subtotalEl) subtotalEl.textContent = '$' + subtotal.toFixed(2);
-                if (taxEl) taxEl.textContent = '$' + taxAmount.toFixed(2) + (rate ? (' (' + rate.toFixed(2) + '%)') : '');
-                if (totalPriceEl) totalPriceEl.textContent = '$' + grandTotal.toFixed(2);
-            }
-        }
-        
-        function checkout() {
-            if (cartItems.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-            
-            // Create email with cart items, including quantity
-            const itemsList = cartItems.map(item => `- ${item.quantity}x ${item.name} @ ${item.description}`).join('\n');
-            const subject = encodeURIComponent('Order Inquiry - Bapir Holdings LLC');
-            const body = encodeURIComponent(
-                'Hello Bapir Holdings,\n\n' +
-                'I would like to inquire about ordering the following items:\n\n' +
-                itemsList +
-                '\n\nPlease contact me with pricing and availability.\n\n' +
-                'Thank you!'
-            );
-            
-            window.location.href = 'mailto:bapirholdings@icloud.com?subject=' + subject + '&body=' + body;
-        }
-        
-        // Function to render the dynamic product list (for products not hardcoded)
-        function renderCigarsProductList() {
-             const cigarsList = document.getElementById('cigarsProductList');
-             // Keep only the first 3 hardcoded children, remove the rest
-             while(cigarsList.children.length > 3) {
-                 cigarsList.removeChild(cigarsList.lastChild);
-             }
-
-             const remainingProducts = productsData.slice(3); // Start after the first 3 (which is now an empty array)
-             remainingProducts.forEach(product => {
-                const itemInCart = cartItems.find(item => item.id === product.id);
-                const currentQuantity = itemInCart ? itemInCart.quantity : 0;
-                const remainingStock = product.stock - currentQuantity;
-                const maxQuantity = Math.max(0, remainingStock);
-
-                // LOGIC TO DETERMINE STOCK MESSAGE AND COLOR
-                const stockText = remainingStock > 0 ? 'In Stock' : 'Out of Stock';
-                const stockColor = remainingStock > 0 ? '#00ff88' : '#ff4444'; 
-
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <div class="product-image"></div>
-                    <div class="product-info">
-                        <div class="product-brand">${product.brand}</div>
-                        <h3>${product.name}</h3>
-                        <p>${product.size} ring gauge. Description placeholder for ${product.name}.</p>
-                        <div class="product-price">$${product.price.toFixed(2)}</div>
-                        <p style="color: ${stockColor}; font-size: 0.9rem; margin-top: 0.5rem;">${stockText}</p>
-                        <div style="display: flex; gap: 10px; align-items: center; margin-top: 1rem;">
-                            <input type="number" id="qty-${product.id}" value="${maxQuantity > 0 ? 1 : 0}" min="1" style="width: 60px; padding: 5px; border-radius: 5px; border: 1px solid #00ff88; background: #0a0a0a; color: ${maxQuantity > 0 ? '#e0e0e0' : '#ff4444'};" ${maxQuantity <= 0 ? 'disabled' : ''}>
-                            <button class="add-to-cart-btn" onclick="addToCart(${product.id}, document.getElementById('qty-${product.id}').value)" ${maxQuantity <= 0 ? 'disabled' : ''}>${maxQuantity <= 0 ? 'Out of Stock' : 'Add to Cart'}</button>
-                        </div>
-                    </div>
-                `;
-                
-        }
-        
         function openAboutPage() {
             document.getElementById('aboutPage').style.display = 'block';
             document.body.style.overflow = 'hidden';
-            window.scrollTo(0, 0);
         }
         
         function closeAboutPage() {
             document.getElementById('aboutPage').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        
         
         function openPrivacyModal() {
             document.getElementById('privacyModal').style.display = 'block';
@@ -1424,20 +290,12 @@
             document.getElementById('privacyModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside of it
+
         window.onclick = function(event) {
-            var modal = document.getElementById('privacyModal');
-            if (event.target == modal) {
+            if (event.target == document.getElementById('privacyModal')) {
                 closePrivacyModal();
             }
         }
-        
-        // Initialize cart count and dynamic products on load
-        window.onload = () => {
-             updateCartCount();
-             renderCigarsProductList(); 
-        };
     </script>
 </body>
 </html>
