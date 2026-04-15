@@ -897,56 +897,11 @@
         }
     }
 
-    /* [MOBILE OPTIMIZATION: Layout Fixes] */
-    .about-page-content, .cigars-page-content, .cart-page-content {
-        padding-top: 140px; /* Adjusted for the stacked mobile header */
-    }
-
-    @media (min-width: 601px) {
-        .about-page-content, .cigars-page-content, .cart-page-content {
-            padding-top: 8rem;
-        }
-    }
-</style>
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="#home" class="logo-container">
-                    <img src="images/logo3.jpeg" alt="Bapir Holdings Logo" class="logo">
-                <span class="logo-text">BAPIR HOLDINGS</span>
-            </a>
-            <div class="nav-center">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#" onclick="openAboutPage(); return false;">About</a></li>
-                </ul>
-                <div class="cart-icon" onclick="openCart()">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <section id="home" class="hero" style="padding: 0;">
-        <a id="home-anchor" style="display: block; position: relative; top: -100px;"></a>
-    </section>
-
-    <section id="products" class="home-logo-section">
-        <img src="images/logo3.jpeg" alt="Bapir Holdings Neon Logo">
-    </section>
-
     <footer>
         <div class="footer-content">
             <div class="footer-left">
                 <p>&copy; 2026 Bapir Holdings LLC. All rights reserved.</p>
-                <p>Premium Cigars | Exceptional Quality</p>
+                <p>Exceptional Quality</p>
             </div>
             <div class="footer-right">
                 <p><strong>Email:</strong> bapirholdings@icloud.com</p>
@@ -991,7 +946,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <p>&copy; 2026 Bapir Holdings LLC. All rights reserved.</p>
-                    <p>Premium Cigars | Exceptional Quality</p>
+                    <p>Exceptional Quality</p>
                 </div>
                 <div class="footer-right">
                     <p><strong>Email:</strong> bapirholdings@icloud.com</p>
@@ -1090,7 +1045,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <p>&copy; 2026 Bapir Holdings LLC. All rights reserved.</p>
-                    <p>Premium Cigars | Exceptional Quality</p>
+                    <p>Exceptional Quality</p>
                 </div>
                 <div class="footer-right">
                     <p><strong>Email:</strong> bapirholdings@icloud.com</p>
@@ -1445,20 +1400,7 @@
                         </div>
                     </div>
                 `;
-                cigarsList.appendChild(card);
-             });
-        }
-        
-        function openCigarsPage() {
-            document.getElementById('cigarsPage').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            window.scrollTo(0, 0);
-            renderCigarsProductList(); // Ensure stock/quantity is up-to-date
-        }
-        
-        function closeCigarsPage() {
-            document.getElementById('cigarsPage').style.display = 'none';
-            document.body.style.overflow = 'auto';
+                
         }
         
         function openAboutPage() {
