@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "name": "Elite Service Package",
-        "price": "150.00",
-        "originalPrice": "",
-        "image": "images/item1.jpg",
+        "name": "Poduct 1",
+        "price": "10.00",
+        "originalPrice": "10.00",
+        "image": "images/logo5.png",
         "chaseLink": "https://checkout.chase.com/link1",
         "onSale": false
     },
     {
         "id": 2,
-        "name": "Premium Membership",
-        "price": "80.00",
-        "originalPrice": "100.00",
-        "image": "images/item2.jpg",
+        "name": "Product 2",
+        "price": "10.00",
+        "originalPrice": "10.00",
+        "image": "images/logo5.png",
         "chaseLink": "https://checkout.chase.com/link2",
         "onSale": true
     }
