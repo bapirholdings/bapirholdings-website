@@ -5,7 +5,7 @@
         "price": "10.00",
         "originalPrice": "10.00",
         "image": "images/logo5.png",
-        "chaseLink": "https://checkout.chase.com/link1",
+        "chaseLink": "https://secure.chase.com/web/auth/public/smb/paymentportal-ui?invid=J1G1BVSLKTBP",
         "onSale": false
     },
     {
@@ -14,7 +14,7 @@
         "price": "10.00",
         "originalPrice": "10.00",
         "image": "images/logo5.png",
-        "chaseLink": "https://checkout.chase.com/link2",
-        "onSale": true
+        "chaseLink": "https://secure.chase.com/web/auth/public/smb/paymentportal-ui?invid=J1GJJY2VVX02",
+        "onSale": false
     }
 ]
