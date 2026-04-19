@@ -2,19 +2,19 @@
     {
         "id": 1,
         "name": "Poduct 1",
-        "price": "10.00",
+        "price": "5.00",
         "originalPrice": "10.00",
         "image": "images/logo5.png",
         "chaseLink": "",
-        "onSale": false
+        "onSale": true
     },
     {
         "id": 2,
         "name": "Product 2",
-        "price": "10.00",
+        "price": "5.00",
         "originalPrice": "10.00",
         "image": "images/logo5.png",
         "chaseLink": "",
-        "onSale": false
+        "onSale": true
     }
 ]
