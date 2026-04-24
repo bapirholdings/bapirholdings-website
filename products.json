@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "EP Carrillo Pledge Sojourn",
+        "price": 14.00,
+        "description": "6.00 x 52 ring gauge. A sophisticated blend showcasing EP Carrillo's masterful craftsmanship. Rich, smooth, and perfectly balanced.",
+        "image": "product-pics/EP_Carrillo_Pledge.png"
+    },
+    {
+        "id": 2,
+        "name": "AJ Fernandez Decenio 10th Anniversary",
+        "price": 14.00,
+        "description": "6.50 x 54 ring gauge. Celebrating 10 years of excellence. A bold, complex blend with rich Nicaraguan tobacco.",
+        "image": "product-pics/AJ_Fernandez_Decenio.png"
+    },
+    {
+        "id": 3,
+        "name": "Arturo Fuente Conquistadores Natural",
+        "price": 8.00,
+        "description": "5.50 x 56 ring gauge. A classic Dominican blend with natural wrapper. Smooth, creamy, and aromatic.",
+        "image": "product-pics/Arturo_Fuente_Conquistadores.png"
+    }
+]

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Bapir Holdings</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensuring cart items look good even if style.css is missing these */
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            margin-bottom: 15px;
+        }
+        .remove-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+        .remove-btn:hover {
+            background: #cc0000;
+        }
+        #cart-count {
+            display: none; /* Hidden by default, script.js will show it if > 0 */
+            align-items: center;
+            justify-content: center;
+            min-width: 18px;
+            height: 18px;
+            z-index: 10;
+        }
+    </style>
+    <script src="https://www.paypal.com/sdk/js?client-id=ATLF3VYI5hv0x42FcF6vN9IMfOV_i_v_GKyyvuq9WAQ17MXcCBS0c2M-p8wf3Azr5SzJm8AFJsmqbNad&currency=USD"></script>
+</head>
+<body>
+
+    <header>
+        <nav style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="logos-and-images/logo5.png" alt="Bapir Holdings Logo" style="height: 50px; width: auto; margin-right: 15px;">
+                    <span style="color: #00ff88; font-size: 1.5rem; font-weight: bold; white-space: nowrap;">Bapir Holdings</span>
+                </a>
+            </div>
+
+            <ul class="nav-links" style="display: flex; align-items: center; list-style: none; gap: 20px;">
+                <li><a href="index.html" style="text-decoration: none; color: #00ff88; font-weight: bold; transition: color 0.3s;">Home</a></li>
+                <li><a href="shop.html" style="text-decoration: none; color: #00ff88; font-weight: bold; transition: color 0.3s;">Shop</a></li>
+                <li><a href="about.html" style="text-decoration: none; color: #00ff88; font-weight: bold; transition: color 0.3s;">About</a></li>
+                
+                <li class="cart-container" style="position: relative; margin-left: 10px;">
+                    <a href="checkout.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span id="cart-count" class="cart-count" style="position: absolute; top: -8px; right: -12px; background: #ff4444; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.75rem; font-weight: bold; display: none; align-items: center; justify-content: center;">0</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="burger" style="display: none; cursor: pointer;">
+                <div class="line1" style="width: 25px; height: 3px; background-color: #00ff88; margin: 5px; transition: all 0.3s ease;"></div>
+                <div class="line2" style="width: 25px; height: 3px; background-color: #00ff88; margin: 5px; transition: all 0.3s ease;"></div>
+                <div class="line3" style="width: 25px; height: 3px; background-color: #00ff88; margin: 5px; transition: all 0.3s ease;"></div>
+            </div>
+
+        </nav>
+    </header>
+
+    <main style="padding: 50px; max-width: 1100px; margin: 0 auto; color: #fff;">
+        <h1 style="color: #00ff88; margin-bottom: 30px;">Your Shopping Cart</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+            
+            <div style="flex: 1.5; min-width: 300px;">
+                <h3 style="margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">Items in Cart</h3>
+                <div id="cart-items-display" style="margin-bottom: 40px;">
+                    </div>
+
+                <h3 style="margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">Shipping Details</h3>
+                <form id="checkout-form" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" placeholder="Full Name" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff;">
+                    <input type="text" placeholder="Street Address" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff;">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="City" required style="flex: 2; padding: 12px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff;">
+                        <input type="text" id="state-input" placeholder="State (e.g., MA or NY)" required style="flex: 1; padding: 12px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff;">
+                    </div>
+                    <input type="text" placeholder="ZIP Code" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff;">
+                    <div id="paypal-button-container" style="margin-top: 20px;"></div>
+                </form>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 8px; border: 1px solid #333; position: sticky; top: 20px;">
+                <h2 style="color: #fff; margin-top: 0; font-size: 1.5rem;">Order Summary</h2>
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Subtotal</span>
+                        <span id="subtotal-val">$0.00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Shipping</span>
+                        <span style="color: #00ff88; font-weight: bold;">FREE</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Estimated Sales Tax</span>
+                        <span id="tax-val">$0.00</span>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #444; margin: 10px 0;">
+                    <div style="display: flex; justify-content: space-between; font-size: 1.4rem; font-weight: bold;">
+                        <span>Total</span>
+                        <span id="total-val" style="color: #00ff88;">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Bapir Holdings LLC. All rights reserved.</p>
+                <p>Premium Cigars | Exceptional Quality</p>
+            </div>
+            <div class="footer-right">
+                <p><strong>Email:</strong> bapirholdings@icloud.com</p>
+                <p><strong>Phone:</strong> (617) 863-8077</p>
+            </div>
+        </div>
+        <div class="footer-center">
+            <a href="#" class="privacy-link" onclick="openPrivacyModal(); return true;">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closePrivacyModal()">&times;</span>
+            <h2 style="color: #00ff88; margin-bottom: 1rem;">Privacy Policy</h2>
+             <p>Bapir Holdings LLC is firmly committed to the protection and respect of your privacy. Following, we will outline our policy regarding the collection and use of information obtained from our customers, visitors and guests. If you have any questions or concerns regarding our privacy policies, or if you would like to unsubscribe from receiving any communications from Bapir Holdings LLC, please contact us at bapirholdings@icloud.com.</p>
+            <p>Maintaining your privacy is a crucial priority at Bapir Holdings LLC. We do not sell, share or rent your information to other parties in any manner other than expressly disclosed in this statement. Please review our Privacy Policy for a clear understanding of the measures we employ to protect you and guard the information you provide to us.</p>
+            <h3>Information Collected</h3>
+            <p>We collect and store the information you enter on our website, as well as any information you provide to us in any other way. You may choose not to provide certain information, but as a result you may be prohibited from accessing specific attributes of online shopping.</p>
+            <h3>Why We Request Your Information</h3>
+            <p>Bapir Holdings LLC collects information about customers for the purpose of enhancing site navigation, expediting order placement and providing an overall exceptional online shopping experience. Complete satisfaction and superior customer service from your initial order placement to the product reaching your doorstep are fundamental priorities at Bapir Holdings LLC.</p>
+            <h3>How We Request Your Information</h3>
+            <p>We prompt you to supply your contact, billing and shipping information as you create an account during the order process. This information is required to complete a purchase and is used to contact you regarding your order. Correct billing, shipping and contact information, such as email and phone number, are necessary for Bapir Holdings LLC to process your order. Transfer of this information is secure and cannot be received or accessed by others.</p>
+            <h3>How We Use Information We Request</h3>
+            <p>Third parties are utilized to perform services in conjunction with Bapir Holdings LLC operations. Payment processing and authorization, fraud protection, age verification, order fulfillment and shipping, website evaluation, data analysis, as well as the distribution of marketing materials are all examples of third party services used by Bapir Holdings LLC. Personal information provided to third parties by Bapir Holdings LLC is authorized for use only in conjunction with the services third parties perform.</p>
+            <h3>California Privacy Act Disclosure</h3>
+            <p>The California Consumer Privacy Act of 2018 (CCPA) provides consumers who are California residents with explicit rights regarding their personal information.</p>
+            <p><strong>Bapir Holdings LLC does not sell your personal information.</strong></p>
+            <p>You have the right to request deletion of the personal information collected or maintained by Bapir Holdings LLC. Deletion of personal information may affect our ability to manage your account. You have the right to request that Bapir Holdings LLC disclose what personal information we collect, use, and disclose.</p>
+            <h3>Cookies</h3>
+            <p>Our website is committed to a privacy-first experience and does not use cookies of any kind. We do not use tracking, advertising, or preference-based cookies to monitor your behavior or store data on your device. This site is designed to function fully without these technologies, ensuring that your browsing session remains private and that no tracking data is shared with third parties. If this approach ever changes, we will update this statement immediately to ensure total transparency.</p>
+            <h3>Security</h3>
+            <p>The protection of your privacy and personal information is a major priority at Bapir Holdings LLC. We utilize industry-standard systems and procedures to safeguard against unauthorized access to information collected online and to ensure that it is used appropriately.</p>
+            <p>We use Secure Sockets Layer (SSL) software, which encrypts information you provide during transmission. All of your information, including credit card numbers, is encrypted so that it cannot be read during its exchange over the internet. In addition, we recommend protecting unauthorized access to your password and to your computer.</p>
+            <h3>Changes to Our Privacy Policy</h3>
+            <p>You will be notified via email in the event that our Privacy Policy is modified in a manner that will affect your personally identifiable information.</p>
+            <h3>Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <p><strong>Email:</strong> bapirholdings@icloud.com<br>
+            <strong>Phone:</strong> (617) 863-8077</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
